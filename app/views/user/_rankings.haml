@@ -1,0 +1,31 @@
+%table
+  %tr
+    %th.w80
+      Rank
+    %th.w150
+      Ingame Name
+    %th.w100
+      Wins
+    %th.w100
+      Looses
+    %th.w100
+      Ratio
+    %th.w80
+      Elo
+    %th
+  - users.each_with_index do |user, index|
+    %tr
+      %td
+        = index + 1
+      %td
+        = user.ig_name
+      %td
+        = user.wins
+      %td
+        = user.looses
+      %td{ :class => user.ratio.to_f >= 1 ? 'green' : 'red' }
+        = user.ratio
+      %td
+        = user.elo
+      %td
+        = button_to "Löschen", user, :confirm => "Willst du <#{user.ig_name}> wirklich entfernen?", :method => :delete
