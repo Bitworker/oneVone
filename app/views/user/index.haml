@@ -3,12 +3,4 @@
 #history
   = render :partial => 'user/history',  :locals => { :history => @history }
 #options
-  = form_for @user, :url => new_user_path do |f|
-    = f.text_field :ig_name, :placeholder => 'Bitte Ingame Namen angeben'
-    = f.submit 'Speichern'
-
-  .match-results
-    = form_for @history, :url => match_result_user_path(@users.first) do |f|
-      = f.select :winner, options_for_select(@users.map(&:ig_name)), :include_blank  => "Gewinner wählen..."
-      = f.select :looser, options_for_select(@users.map(&:ig_name)), :include_blank  => "Verlierer wählen..."
-      = f.submit 'Gieb ELO'
+  = render :partial => 'user/options'

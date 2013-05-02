@@ -1,7 +1,7 @@
 class UserController < ApplicationController
   before_filter :get_winner_and_looser, :only => [:match_result, :gieb_points]
   def index
-    @users   = User.all
+    @users   = User.order('elo DESC').all
     @user    = User.new
     @history = History.all
   end
