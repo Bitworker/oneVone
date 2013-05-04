@@ -1,9 +1,28 @@
-= form_for @user, :url => new_user_path do |f|
-  = f.text_field :ig_name, :placeholder => 'Bitte Ingame Namen angeben'
-  = f.submit 'Speichern'
+%table
+  %tr
+    %th
+      Optionen
+    %tr
+      %td.w638px
+        .new-user
+          %h5
+            Neuen User anlegen
+          %hr
+          = form_for @user, :url => new_user_path do |f|
+            = f.text_field :ig_name, :placeholder => 'Bitte Ingame Namen angeben'
+            = f.submit 'Speichern', :class => 'button'
 
-.match-results
-  = form_for @history, :url => match_result_user_path(@users.first) do |f|
-    = f.select :winner, options_for_select(@users.map(&:ig_name)), :include_blank  => "Gewinner wählen..."
-    = f.select :looser, options_for_select(@users.map(&:ig_name)), :include_blank  => "Verlierer wählen..."
-    = f.submit 'ELO Time'
+        .new-match-results
+          %h5
+            Match resultat eintragen
+          %hr
+          = form_for @history, :url => match_result_user_path(@users.first) do |f|
+            .part1
+              = f.select :winner, options_for_select(@users.map(&:ig_name)), :include_blank  => "Gewinner wählen..."
+              = text_field_tag 'winner_kills','',  placeholder: "Kills..."
+              = text_field_tag 'winner_deaths','', placeholder: "Deaths..."
+            .part2
+              = f.select :looser, options_for_select(@users.map(&:ig_name)), :include_blank  => "Verlierer wählen..."
+              = text_field_tag 'looser_kills','',  placeholder: "Kills..."
+              = text_field_tag 'looser_deaths','', placeholder: "Deaths..."
+            = f.submit 'Gimmy Elo', :class => 'button2'

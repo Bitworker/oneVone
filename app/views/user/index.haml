@@ -1,6 +1,14 @@
-#rankings
-  = render :partial => 'user/rankings', :locals => { :users => @users }
-#history
-  = render :partial => 'user/history',  :locals => { :history => @history }
-#options
-  = render :partial => 'user/options'
+#wrapper
+  = image_tag("logo.jpg")
+  
+  #rankings
+    = render :partial => 'user/rankings', :locals => { :users => @users }
+  #rulz
+    = render :partial => 'user/rulz'
+  #options
+    = render :partial => 'user/options'
+  #history
+    = render :partial => 'user/history',  :locals => { :history => @history }
+  
+  = image_tag("left.jpg", :class => 'img-left')
+  = image_tag("right.jpg", :class => 'img-right')

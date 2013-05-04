@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   attr_accessible :ig_name, :wins, :looses, :elo
   
   validates_uniqueness_of :ig_name
+  validates_presence_of :ig_name
 
   def ratio
     if looses == 0

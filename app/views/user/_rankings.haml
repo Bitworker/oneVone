@@ -12,7 +12,7 @@
       Ratio
     %th.w80
       Elo
-    %th
+    %th.w80
   - users.each_with_index do |user, index|
     %tr
       %td
@@ -29,39 +29,3 @@
         = user.elo
       %td
         = button_to "Löschen", user, :confirm => "Willst du <#{user.ig_name}> wirklich entfernen?", :method => :delete
-
-.rulz
-  %table
-    %tr
-      %th.w233
-        Regelwerk
-    %tr
-      %td
-        Match Mode
-      %td.w401
-        1v1
-    %tr
-      %td
-        Play Mode
-      %td 
-        Best of One (bo1)
-    %tr
-      %td
-        Ban Mode
-      %td 
-        1-1-1-1-1-1 ( Each Team bans 3 champions )
-    %tr
-      %td
-        Map
-      %td
-        Howling Abyss
-    %tr
-      %td
-        How to ban
-      %td 
-        The lower placed team starts with the bans.
-    %tr
-      %td
-        Pick Mode
-      %td 
-        Blind Pick

@@ -1,23 +1,6 @@
 body
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif
-#history, #options
-  float: left
-  ul
-    padding: 0
-    li
-      list-style: none
-#history
-  width: 35%
-  h2
-    text-decoration: underline
-    margin-top: 47px
-  img
-    margin-left: 30%
-#options
-  width: 25%
-#rankings
-  float: left
-  width: 40%
+  margin: auto
   table
     border-collapse: collapse
     text-align: center
@@ -31,33 +14,103 @@ body
       color: orange
       font-weight: bold
       text-transform: uppercase
-  .rulz
-    margin-top: 20px
+  ul
+    text-align: left
+    padding: 0
+    li
+      list-style: none
+#rulz, #history, #options
+  margin-top: 20px
+
+#rankings
+  table
+    border-collapse: collapse
+    text-align: center
+    color: #333
+    td
+      margin: 0
+      border: 1px solid #575757
+    th
+      border: 1px solid #575757
+      background-color: #575757
+      color: orange
+      font-weight: bold
+      text-transform: uppercase
 
 #options
+  h5
+    margin: 0px
+    color: grey
   #user_ig_name
     width: 220px
-    color: grey
-  .match-results
-    width: 310px
-    margin-top: 40px
+    margin-right: 80px
+  input
+    margin-left: 20px
+    float: left
+  .new-user
+    float: left
+    width: 100%
+    margin-top: 30px
+  .new-match-results
+    float: left
+    width: 100%
+    margin-top: 35px
+    margin-bottom: 10px
     select
+      float: left
       color: grey
       width: 225px
+      margin-left: 20px
+  .button, .button2
+    float: left
+    width: 155px
+  .button2
+    margin-left: 439px
+  .button
+    margin-left: 115px  
+#history
+  text-align: left
+  background-color: white
+  ul
+    padding: 20px
 
-.red
-  color: red
-.green
-  color: green
-.orange
-  color: orange
-.w80
-  width: 80px
-.w100
-  width: 100px
-.w150
-  width: 150px
-.w233
-  width: 233px
-.w401
-  width: 401px
+#wrapper
+  width: 638px
+  left: 50%
+  position: absolute
+  margin-left: -319px
+  img
+    position: relative
+    left: 50%
+    margin-left: -88px
+  .img-left
+    position: absolute
+    left: 0px
+    bottom: 0px
+    width: 250px
+    margin-left: -220px
+    z-index: -1
+  .img-right
+    position: absolute
+    left: 638px
+    width: 410px
+    bottom: 0px
+    z-index: -1
+  .red
+    color: red
+  .green
+    color: green
+  .orange
+    color: orange
+  .w80
+    width: 80px
+  .w100
+    width: 100px
+  .w150
+    width: 150px
+  .w225
+    width: 225px
+  .w406
+    width: 406px
+  .w638px
+    width: 638px

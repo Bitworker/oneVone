@@ -1,28 +1,31 @@
-= image_tag("logo.jpg")
-%h2
-  1v1 Liga
-%ul
-  - history.each do |h|
-    - if h.message.present?
-      %li
-        %b
-          #{h.created_at.strftime("%d/%m/%Y %H:%M")}: 
-        #{raw(h.message)}
-    - else
-      %li
-        %b
-          #{h.created_at.strftime("%d/%m/%Y %H:%M")}: 
-        <
-        %span.orange
-          = h.winner
-        (
-        %span.green
-          +
-          = h.winner_points
-        )> hat gegen <
-        %span.orange
-          = h.looser
-        (
-        %span.red
-          = h.looser_points
-        )> gewonnen ... 
+%table
+  %tr
+    %th{:colspan => 2}
+      1v1 Liga-History
+    %tr
+      %td.w638px
+        %ul
+          - history.each do |h|
+            - if h.message.present?
+              %li
+                %b
+                  #{h.created_at.strftime("%d/%m/%Y %H:%M")}: 
+                #{raw(h.message)}
+            - else
+              %li
+                %b
+                  #{h.created_at.strftime("%d/%m/%Y %H:%M")}: 
+                <
+                %span.orange
+                  = h.winner
+                (
+                %span.green
+                  +
+                  = h.winner_points
+                )> hat gegen <
+                %span.orange
+                  = h.looser
+                (
+                %span.red
+                  = h.looser_points
+                )> gewonnen ... 
